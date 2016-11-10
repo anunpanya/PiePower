@@ -168,7 +168,7 @@
 			<label><i class='icon-off'></i></label>
 		</div>
 		<div id="status">
-			Status : <span id="state">Diconnected</span> with NETPIE.
+			Status : <span id="aliashtml">pie</span>, <span id="state">Diconnected</span> with NETPIE.
 		</div>
 		<script src='js/jquery.min.js'></script>
 
@@ -225,6 +225,7 @@
 					online = true;
 					microgear.subscribe('/'+htmlname+'/state');
 					microgear.chat(htmlname,'?');
+					document.getElementById("aliashtml").innerHTML = htmlname;
 					document.getElementById("state").innerHTML = "Connected";
 					document.getElementById("status").style.color = "#2aaf4d";
 				});
@@ -238,7 +239,7 @@
 				
 			}
 			else {
-				alert("Please parse appid, appkey and appsecret as a hash e.g. :\n\n"+location+"#APPID:APPKEY:APPSECRET");            
+				alert("Please parse appid, appkey and appsecret as a hash e.g. :\n\n"+location+"#APPID:APPKEY:APPSECRET:ALIAS");            
 			}
 			
 			
